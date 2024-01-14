@@ -8,6 +8,7 @@ export default {
         "black-1": "#040D12",
         "gray-1": "#09101A",
         "gray-2": "#222831",
+        "gray-3": "#A2A2A2",
         "green-1": "#55E6A5",
       },
     },

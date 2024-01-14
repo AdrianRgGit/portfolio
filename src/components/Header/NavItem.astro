@@ -1,0 +1,19 @@
+---
+interface Props {
+  name: string;
+  icon: string;
+  url: string;
+}
+
+const { name, icon, url } = Astro.props;
+---
+
+<nav class="text-white m-4">
+  <a
+    href={url}
+    class="border border-gray-2 w-full flex gap-x-4 items-center rounded-l-lg"
+  >
+    <div class="h-14 w-14 bg-gray-2 rounded-lg">{icon}</div>
+    <p class="text-gray-3 text-lg font-semibold">{name.toUpperCase()}</p>
+  </a>
+</nav>

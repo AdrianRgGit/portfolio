@@ -1,5 +1,6 @@
 ---
-import Header from "../components/Header.astro";
+import Header from "../components/Header/Header.astro";
+import NavItem from "../components/Header/NavItem.astro";
 
 interface Props {
   title: string;
@@ -19,7 +20,14 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    <Header />
+    <Header>
+      <NavItem slot="nav-item" name="home" icon="" url="#"/>
+      <NavItem slot="nav-item" name="about me" icon="" url="#"/>
+      <NavItem slot="nav-item" name="service" icon="" url="#"/>
+      <NavItem slot="nav-item" name="skills" icon="" url="#"/>
+      <NavItem slot="nav-item" name="portfolio" icon="" url="#"/>
+      <NavItem slot="nav-item" name="contact" icon="" url="#"/>
+    </Header>
     <slot />
   </body>
 </html>
@@ -38,7 +46,7 @@ const { title } = Astro.props;
   }
   html {
     font-family: system-ui, sans-serif;
-    background: #040D12;
+    background: #040d12;
     background-size: 224px;
   }
   code {
