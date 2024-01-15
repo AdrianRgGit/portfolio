@@ -8,7 +8,7 @@ interface Props {
 const { title, description, image } = Astro.props;
 ---
 
-<div class="card-container flex flex-col gap-y-4 bg-gray-1 p-8 md:w-[32%]">
+<div class="card-container flex flex-col gap-y-8 bg-gray-1 p-8 md:w-[32%]">
   <img class="rounded-lg w-24 h-24 mt-[-64px]" src={image} alt="back-img" />
   <h4 class="text-white-1">{title}</h4>
   <p class="text-gray-3">

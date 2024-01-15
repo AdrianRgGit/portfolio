@@ -14,7 +14,7 @@ const { description, href } = Astro.props;
   <div
     class="logo-container h-14 w-14 bg-gray-2 rounded-lg justify-center flex items-center text-white-1"
   >
-    <slot name="icon" />
+    <span class="icon-slot"><slot name="icon" /></span>
   </div>
   <p class="description text-gray-3 text-lg font-semibold">
     {description.toUpperCase()}
@@ -28,5 +28,10 @@ const { description, href } = Astro.props;
 
   a:hover .description {
     color: #55e6a5;
+  }
+
+  a:hover .icon-slot {
+    transform: translateY(-5px);
+    transition: transform 0.5s ease;
   }
 </style>
