@@ -1,9 +1,20 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Home from "../components/Home/Home.astro";
+import AboutMe from "../components/AboutMe/AboutMe.astro";
+import Service from "../components/Service/Service.astro";
+import Skills from "../components/Skills/Skills.astro";
+import Portfolio from "../components/Portfolio/Portfolio.astro";
+import Contact from "../components/Contact/Contact.astro";
 ---
 
 <Layout title="Adrian Ramirez">
-  <main class="md:ml-80">
-    <p class="text-green-1">Hola</p>
+  <main class="md:ml-[16%]">
+    <Home />
+    <AboutMe />
+    <Service />
+    <Skills />
+    <Portfolio />
+    <Contact />
   </main>
 </Layout>
