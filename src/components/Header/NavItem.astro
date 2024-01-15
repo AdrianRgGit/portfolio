@@ -1,19 +1,32 @@
 ---
 interface Props {
-  name: string;
-  icon: string;
-  url: string;
+  description: string;
+  href: string;
 }
 
-const { name, icon, url } = Astro.props;
+const { description, href } = Astro.props;
 ---
 
-<nav class="text-white m-4">
-  <a
-    href={url}
-    class="border border-gray-2 w-full flex gap-x-4 items-center rounded-l-lg"
+<a
+  href={href}
+  class="border border-gray-2 w-full flex gap-x-4 items-center rounded-l-lg"
+>
+  <div
+    class="logo-container h-14 w-14 bg-gray-2 rounded-lg justify-center flex items-center text-white-1"
   >
-    <div class="h-14 w-14 bg-gray-2 rounded-lg">{icon}</div>
-    <p class="text-gray-3 text-lg font-semibold">{name.toUpperCase()}</p>
-  </a>
-</nav>
+    <slot name="icon" />
+  </div>
+  <p class="description text-gray-3 text-lg font-semibold">
+    {description.toUpperCase()}
+  </p>
+</a>
+
+<style>
+  a:hover .logo-container {
+    background-color: #55e6a5;
+  }
+
+  a:hover .description {
+    color: #55e6a5;
+  }
+</style>
