@@ -1,0 +1,24 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  image: string;
+}
+
+const { title, description, image } = Astro.props;
+---
+
+<div class="card-container flex flex-col gap-y-4 bg-gray-1 p-8 md:w-[32%]">
+  <img class="rounded-lg w-24 h-24 mt-[-64px]" src={image} alt="back-img" />
+  <h4 class="text-white-1">{title}</h4>
+  <p class="text-gray-3">
+    {description}
+  </p>
+</div>
+
+<style>
+  .card-container:hover {
+    transform: translateY(-30px);
+    transition: transform 0.5s ease;
+  }
+</style>

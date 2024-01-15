@@ -1,1 +1,33 @@
-<p class="text-green-1">Service</p>
+---
+import CardService from "./CardService.astro";
+---
+
+<section
+  id="service"
+  class="flex flex-col justify-evenly mb-32 p-4 md:justify-center gap-y-32 md:gap-y-48"
+>
+  <article class="flex flex-col items-center gap-y-8">
+    <h3 class="text-green-1 font-semibold text-2xl">SERVICE</h3>
+    <h3 class="text-white-1 text-4xl font-bold text-center">
+      An enthusiastic technology lover committed to providing quality services
+      in web development
+    </h3>
+  </article>
+  <article class="flex flex-wrap gap-y-16 md:gap-y-0 md:gap-x-6">
+    <CardService
+      title="BACK END"
+      description="For backend, I use Node.js in conjunction with Express, and regarding databases, I have experience with both NoSQL (MongoDB using Mongoose) and SQL (MySQL with Sequelize)."
+      image="images/back-img.png"
+    />
+    <CardService
+      title="FULL STACK"
+      description="JavaScript is my primary language, used for both backend and frontend. I have created numerous APIs and their corresponding interfaces."
+      image="images/full-img.png"
+    />
+    <CardService
+      title="FRONT END"
+      description="For frontend, where I feel most comfortable at the moment, is with React Redux, although I also like Angular. I am also proficient in HTML, CSS, and Sass."
+      image="images/front-img.png"
+    />
+  </article>
+</section>
