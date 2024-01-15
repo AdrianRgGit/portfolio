@@ -1,1 +1,50 @@
-<p class="text-green-1">Home</p>
+---
+// const textList = [
+//   "Front Developer",
+//   "Back Developer",
+//   "Api creator",
+//   "Basketball lover",
+// ];
+
+// let currentIndex = 0;
+// let currentText = textList[currentIndex];
+
+// const textElement = document.querySelector(".dynamic-text");
+
+// const changeText = () => {
+//   currentIndex = (currentIndex + 1) % textList.length;
+//   currentText = textList[currentIndex];
+//   textElement.textContent = currentText;
+//   setTimeout(changeText, 3000);
+// };
+
+// changeText();
+---
+
+<section
+  id="home"
+  class="h-screen flex flex-col justify-evenly md:justify-center p-4 md:p-0"
+>
+  <article class="flex flex-col items-center mt-8 gap-y-4">
+    <h1 class="text-white-1 text-4xl md:text-6xl font-bold">HI, I'M ADRIAN!</h1>
+    <h2 class="dynamic-text text-green-1 text-2xl md:text-4xl font-bold">
+      Texto dinámico
+    </h2>
+  </article>
+
+  <article class="flex flex-col items-center gap-y-8 md:w-[66%] md:m-auto">
+    <p class="text-gray-3 text-justify text-lg md:text-left">
+      I'm a <span class="font-semibold text-green-1">Web Developer</span> with a
+      strong focus on <span class="font-semibold text-green-1">JavaScript</span
+      >. My experience encompasses both <span class="font-semibold text-green-1"
+        >Front End</span
+      >, where I excel in React with Redux and Context, as well as <span
+        class="font-semibold text-green-1">Back End</span
+      >, where I have experience in Node.js and Express, along with <span
+        class="font-semibold text-green-1">database</span
+      >
+      management, including MongoDB with Mongoose and MySQL with Sequelize.
+    </p>
+    <button class="h-16 w-40 rounded bg-green-1">Download CV</button>
+  </article>
+</section>
