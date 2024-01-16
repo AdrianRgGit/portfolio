@@ -1,24 +1,5 @@
 ---
-// const textList = [
-//   "Front Developer",
-//   "Back Developer",
-//   "Api creator",
-//   "Basketball lover",
-// ];
 
-// let currentIndex = 0;
-// let currentText = textList[currentIndex];
-
-// const textElement = document.querySelector(".dynamic-text");
-
-// const changeText = () => {
-//   currentIndex = (currentIndex + 1) % textList.length;
-//   currentText = textList[currentIndex];
-//   textElement.textContent = currentText;
-//   setTimeout(changeText, 3000);
-// };
-
-// changeText();
 ---
 
 <section
@@ -27,9 +8,9 @@
 >
   <article class="flex flex-col items-center mt-8 gap-y-4">
     <h1 class="text-white-1 text-4xl md:text-6xl font-bold">HI, I'M ADRIAN!</h1>
-    <h2 class="dynamic-text text-green-1 text-2xl md:text-4xl font-bold">
-      Texto dinámico
-    </h2>
+    <div class="dynamic-text-container">
+      <h2 class="dynamic-text text-green-1 text-2xl md:text-4xl font-bold"></h2>
+    </div>
   </article>
 
   <article class="flex flex-col items-center gap-y-8 md:w-[66%] md:m-auto">
@@ -52,3 +33,46 @@
     >
   </article>
 </section>
+
+<script>
+  const textList = [
+    "Front Developer",
+    "Back Developer",
+    "Api creator",
+    "Basketball lover",
+  ];
+
+  let currentIndex = 0;
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const textElement = document.querySelector(".dynamic-text");
+
+    if (textElement) {
+      const changeText = () => {
+        textElement.classList.remove("visible");
+
+        setTimeout(() => {
+          currentIndex = (currentIndex + 1) % textList.length;
+          textElement.textContent = textList[currentIndex];
+          textElement.classList.add("visible");
+        }, 500);
+
+        setTimeout(changeText, 3500);
+      };
+
+      textElement.classList.add("visible");
+      changeText();
+    }
+  });
+</script>
+
+<style>
+  .dynamic-text {
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0;
+  }
+
+  .dynamic-text.visible {
+    opacity: 1;
+  }
+</style>

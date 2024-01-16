@@ -1,1 +1,51 @@
-<p class="text-green-1">Skills</p>
+---
+import SkillsImage from "./SkillsImage.astro";
+---
+
+<section
+  id="skills"
+  class="flex flex-col justify-evenly mb-32 p-4 md:justify-center gap-y-32 md:gap-y-32"
+>
+  <article class="flex flex-col items-center gap-y-8">
+    <h3 class="text-green-1 font-semibold text-2xl">SKILLS</h3>
+    <h3 class="text-white-1 text-4xl font-bold text-center">
+      Exploring the tech horizon, I bring a diverse skill set and hands-on
+      experience across a range of technologies
+    </h3>
+  </article>
+
+  <article class="md:flex md:gap-x-4 md:w-[75%] md:m-auto md:bg-gray-1">
+    <div class="md:flex md:items-start">
+      <div class="flex flex-col mb-12 gap-y-4 p-4 bg-gray-1 md:w-[50%] md:mr-4 md:mb-0 md:bg-transparent">
+        <h4 class="text-white-1 m-auto text-2xl font-semibold">FRONTEND</h4>
+        <div class="flex gap-8 flex-wrap p-4 justify-evenly">
+          <SkillsImage image="images/js-logo.png" alt="js-logo" />
+          <SkillsImage
+            image="images/typescript-logo.png"
+            alt="typescript-logo"
+          />
+          <SkillsImage image="images/html5-logo.png" alt="html5-logo" />
+          <SkillsImage image="images/css3-logo.png" alt="css3-logo" />
+          <SkillsImage image="images/sass-logo.png" alt="sass-logo" />
+          <SkillsImage image="images/react-logo.png" alt="react-logo" />
+          <SkillsImage image="images/nextjs-logo.png" alt="nextjs-logo" />
+          <SkillsImage image="images/tailwind-logo.png" alt="tailwind-logo" />
+          <SkillsImage image="images/astro-logo.png" alt="astro-logo" />
+        </div>
+      </div>
+
+      <div
+        class="flex flex-col mb-12 gap-y-4 bg-gray-1 p-4 md:w-[50%] md:mr-4 md:mb-0 md:bg-transparent"
+      >
+        <h4 class="text-white-1 m-auto text-2xl font-semibold">BACKEND</h4>
+        <div class="flex gap-8 flex-wrap p-4 justify-evenly">
+          <SkillsImage image="images/python-logo.png" alt="python-logo" />
+          <SkillsImage image="images/django-logo.png" alt="django-logo" />
+          <SkillsImage image="images/nodejs-logo.png" alt="nodejs-logo" />
+          <SkillsImage image="images/mysql-logo.png" alt="mysql-logo" />
+          <SkillsImage image="images/mongodb-logo.png" alt="mongodb-logo" />
+        </div>
+      </div>
+    </div>
+  </article>
+</section>
