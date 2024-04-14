@@ -13,7 +13,7 @@ const { title, techs, description, href, image } = Astro.props;
 <div class="h-auto bg-gray-1 md:w-[45%]">
   <a href={href}>
     <div class="flex flex-col gap-y-4">
-      <img class="md:h-[360px]" src={image} alt={title} />
+      <img class="md:h-[360px] object-contain" src={image} alt={title} />
       <div class="mb-4 p-4">
         <h4 class="text-green-1">{title}</h4>
         <h5 class="text-white-1 mb-4">{techs}</h5>
