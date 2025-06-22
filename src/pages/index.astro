@@ -1,21 +1,10 @@
 ---
-import NavBar from "../components/NavBar.astro";
-import CustomBadge from "../components/ui/CustomBadge.astro";
-import AnimatedCurvedText from "../components/Hero/AnimatedCurvedText.jsx";
+import Hero from "../components/Hero/Hero.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
   <main>
-    <section class="h-screen flex items-center justify-center">
-      <div class="space-y-4">
-        <CustomBadge>2024-25</CustomBadge>
-        <div class="relative flex items-end">
-          <h1 class="text-9xl font-titulo font-bold leading-none">Portfolio</h1>
-          <AnimatedCurvedText client:load />
-        </div>
-        <NavBar />
-      </div>
-    </section>
+    <Hero />
   </main>
 </Layout>
