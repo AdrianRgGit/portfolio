@@ -1,0 +1,14 @@
+---
+import { ArrowUpRight } from "@lucide/astro";
+
+const { text, href, class: className, ...props } = Astro.props;
+---
+
+<button
+  type="button"
+  class={`flex items-center px-4 rounded-full border border-theme-black hover:bg-theme-green transition-colors duration-200 cursor-pointer ${className}`}
+  {...props}
+>
+  <ArrowUpRight />
+  <a href={href}><slot /></a>
+</button>

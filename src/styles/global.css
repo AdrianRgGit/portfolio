@@ -2,7 +2,8 @@
 
 @font-face {
   font-family: Grotesk;
-  src: url("/fonts/Space_Grotesk/SpaceGrotesk-VariableFont_wght.ttf") format("ttf");
+  src: url("/fonts/Space_Grotesk/SpaceGrotesk-VariableFont_wght.ttf")
+    format("ttf");
   font-weight: 200 400 700;
   font-style: normal;
   font-display: swap;

@@ -1,10 +1,31 @@
 ---
+import NavBar from "../components/NavBar.astro";
 import Layout from "../layouts/Layout.astro";
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import CurvedText from "../components/CurvedText"; // Importa el componente Preact
+import CustomBadge from "../components/ui/CustomBadge.astro";
 ---
 
 <Layout>
-  <main class="text-6xl font-semibold">Adrián Ramírez Galera</main>
+  <main>
+    <section class="h-screen flex items-center justify-center">
+      <div class="space-y-4">
+        <div class="relative flex items-end">
+          <h1 class="text-9xl font-titulo font-bold leading-none">Portfolio</h1>
+          <CurvedText
+            text="dneTnorF rodallorraseD"
+            radius={100}
+            className="absolute text-2xl font-semibold"
+            client:load
+          />
+        </div>
+        <div class="flex gap-4 mt-8">
+            <CustomBadge>Logofolio</CustomBadge>
+            <CustomBadge>Branding</CustomBadge>
+            <CustomBadge>Social Media</CustomBadge>
+            <CustomBadge>Logo Motion</CustomBadge>
+        </div>
+        <NavBar />
+      </div>
+    </section>
+  </main>
 </Layout>
