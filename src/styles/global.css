@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: Grotesk;
+  src: url("/fonts/Space_Grotesk/SpaceGrotesk-VariableFont_wght.ttf") format("ttf");
+  font-weight: 200 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  /* * NOTE: FUENTES */
+  --font-grotesk: "Grotesk", "sans-serff";
+
+  --color-theme-white: #efefef;
+  --color-theme-black: #222021;
+  --color-theme-green: #b1e656;
+  --color-theme-red: #e7a0b5;
+  --color-theme-blue: #686ce6;
+  --color-theme-orange: #e5895d;
+
+  --color-font-white: #efefef;
+  --color-font-black: #222021;
+}
