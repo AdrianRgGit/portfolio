@@ -1,0 +1,92 @@
+---
+import CustomBadge from "../ui/CustomBadge.astro";
+import { Mail, MapPin } from "@lucide/astro";
+import CustomButton from "../ui/CustomButton.astro";
+---
+
+<section id="about-me" class="h-screen flex flex-col justify-center py-6 px-12">
+  <h2 class="text-6xl font-titulo font-bold mb-12 text-center">Sobre mí</h2>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-x-20 items-start">
+    <div class="flex flex-col items-center justify-start md:items-end">
+      <div class="flex items-center justify-center overflow-hidden">
+        <img
+          src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=facearea&w=400&h=400&facepad=2"
+          alt="imagen de Adrián"
+          class="object-cover"
+        />
+      </div>
+
+      <div class="mt-4 flex flex-col items-end">
+        <div class="flex items-center gap-x-1">
+          <MapPin size={16} />
+          <p class="">Valencia, España</p>
+        </div>
+        <div class="flex items-center gap-x-1">
+          <Mail size={16} />
+          <a href="mailto:adrianramirezgalera@gmail.com" class=""
+            >adrianramirezgalera@gmail.com</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <div class="space-y-10 text-gray-800">
+      <article class="space-y-4">
+        <h3 class="text-3xl font-bold mb-2">Desarrollador y Diseñador Web</h3>
+        <p>
+          ¡Hola! Soy un apasionado desarrollador y diseñador web con un enfoque
+          en la creatividad y la experiencia del usuario.
+        </p>
+        <p>
+          Con más de 5 años de experiencia en la industria, he trabajado en
+          proyectos que van desde pequeñas startups hasta grandes empresas,
+          siempre buscando crear soluciones digitales que no solo sean
+          funcionales, sino también visualmente atractivas y fáciles de usar.
+        </p>
+        <p>
+          Creo firmemente que el buen diseño no solo debe verse bien, sino
+          también comunicar de manera efectiva y generar una conexión emocional
+          auténtica.
+        </p>
+      </article>
+
+      <article class="space-y-4">
+        <h3 class="text-2xl font-bold mb-2">Especialidades</h3>
+        <div class="flex flex-wrap gap-2">
+          <CustomBadge className="text-sm px-3 py-1"
+            >Identidad Visual</CustomBadge
+          >
+          <CustomBadge className="text-sm px-3 py-1">Diseño Web</CustomBadge>
+          <CustomBadge className="text-sm px-3 py-1">Tipografía</CustomBadge>
+          <CustomBadge className="text-sm px-3 py-1">Branding</CustomBadge>
+          <CustomBadge className="text-sm px-3 py-1">UI/UX</CustomBadge>
+          <CustomBadge className="text-sm px-3 py-1">Ilustración</CustomBadge>
+          <CustomBadge className="text-sm px-3 py-1">Fotografía</CustomBadge>
+          <CustomBadge className="text-sm px-3 py-1"
+            >Dirección Creativa</CustomBadge
+          >
+        </div>
+      </article>
+
+      <article class="space-y-4">
+        <h3 class="text-2xl font-bold mb-2">Filosofía</h3>
+        <blockquote
+          class="border-l-4 border-gray-400 pl-4 italic text-gray-600"
+        >
+          "La simplicidad es la máxima sofisticación. Cada elemento debe tener
+          un propósito, cada decisión debe estar justificada."
+        </blockquote>
+      </article>
+
+      <div class="mt-10">
+        <CustomButton
+          href="/#proyectos"
+          className="bg-blue-600 text-white hover:bg-blue-700 transition-colors"
+        >
+          Ver mi trabajo
+        </CustomButton>
+      </div>
+    </div>
+  </div>
+</section>
