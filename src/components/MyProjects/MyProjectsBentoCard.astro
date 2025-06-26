@@ -1,0 +1,33 @@
+---
+import CustomBadge from "../ui/CustomBadge.astro";
+
+const {
+  title,
+  subtitle,
+  badge,
+  colSpan = 1,
+  highlighted = false,
+  class: className = "bg-theme-blue",
+} = Astro.props;
+---
+
+<div
+  class={`relative col-span-${colSpan} rounded-xl  border-3 border-theme-green p-4 flex flex-col justify-between ${className}`}
+>
+  <CustomBadge
+    ><span class="mb-2 text-font-white">
+      {badge}
+    </span>
+  </CustomBadge>
+
+  <div>
+    <h4 class="text-white font-semibold">{title}</h4>
+    <p class="text-sm text-gray-300">{subtitle}</p>
+  </div>
+
+  {
+    highlighted && (
+      <div class="absolute top-2 right-2 w-2 h-2 rounded-full bg-green-400" />
+    )
+  }
+</div>

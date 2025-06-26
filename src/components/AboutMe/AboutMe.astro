@@ -1,7 +1,7 @@
 ---
-import CustomBadge from "../ui/CustomBadge.astro";
 import { Mail, MapPin } from "@lucide/astro";
 import CustomButton from "../ui/CustomButton.astro";
+import SpecialitiesWrapper from "../common/SpecialitiesWrapper.astro";
 ---
 
 <section id="about-me" class="h-screen flex flex-col justify-center py-6 px-12">
@@ -31,20 +31,20 @@ import CustomButton from "../ui/CustomButton.astro";
       </div>
     </div>
 
-    <div class="space-y-10 text-gray-800">
+    <div class="space-y-10">
       <article class="space-y-4">
         <h3 class="text-3xl font-bold mb-2">Desarrollador y Diseñador Web</h3>
-        <p>
+        <p class="text-font-gray">
           ¡Hola! Soy un apasionado desarrollador y diseñador web con un enfoque
           en la creatividad y la experiencia del usuario.
         </p>
-        <p>
+        <p class="text-font-gray">
           Con más de 5 años de experiencia en la industria, he trabajado en
           proyectos que van desde pequeñas startups hasta grandes empresas,
           siempre buscando crear soluciones digitales que no solo sean
           funcionales, sino también visualmente atractivas y fáciles de usar.
         </p>
-        <p>
+        <p class="text-font-gray">
           Creo firmemente que el buen diseño no solo debe verse bien, sino
           también comunicar de manera efectiva y generar una conexión emocional
           auténtica.
@@ -52,27 +52,13 @@ import CustomButton from "../ui/CustomButton.astro";
       </article>
 
       <article class="space-y-4">
-        <h3 class="text-2xl font-bold mb-2">Especialidades</h3>
-        <div class="flex flex-wrap gap-2">
-          <CustomBadge className="text-sm px-3 py-1"
-            >Identidad Visual</CustomBadge
-          >
-          <CustomBadge className="text-sm px-3 py-1">Diseño Web</CustomBadge>
-          <CustomBadge className="text-sm px-3 py-1">Tipografía</CustomBadge>
-          <CustomBadge className="text-sm px-3 py-1">Branding</CustomBadge>
-          <CustomBadge className="text-sm px-3 py-1">UI/UX</CustomBadge>
-          <CustomBadge className="text-sm px-3 py-1">Ilustración</CustomBadge>
-          <CustomBadge className="text-sm px-3 py-1">Fotografía</CustomBadge>
-          <CustomBadge className="text-sm px-3 py-1"
-            >Dirección Creativa</CustomBadge
-          >
-        </div>
+        <SpecialitiesWrapper />
       </article>
 
       <article class="space-y-4">
         <h3 class="text-2xl font-bold mb-2">Filosofía</h3>
         <blockquote
-          class="border-l-4 border-gray-400 pl-4 italic text-gray-600"
+          class="border-l-4 border-theme-gray pl-4 italic text-font-gray"
         >
           "La simplicidad es la máxima sofisticación. Cada elemento debe tener
           un propósito, cada decisión debe estar justificada."
@@ -80,12 +66,7 @@ import CustomButton from "../ui/CustomButton.astro";
       </article>
 
       <div class="mt-10">
-        <CustomButton
-          href="/#my-projects"
-          className="bg-blue-600 text-white hover:bg-blue-700 transition-colors"
-        >
-          Ver mi trabajo
-        </CustomButton>
+        <CustomButton href="/#my-projects"> Ver mi trabajo </CustomButton>
       </div>
     </div>
   </div>

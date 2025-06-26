@@ -1,7 +1,7 @@
 ---
 import { ArrowUpRight } from "@lucide/astro";
 
-const { text, href, class: className, ...props } = Astro.props;
+const { text, href, target, class: className, ...props } = Astro.props;
 ---
 
 <button
@@ -12,6 +12,7 @@ const { text, href, class: className, ...props } = Astro.props;
   <ArrowUpRight class="rotate-arrow" />
   <a
     href={href}
+    target={target || "_self"}
     class="font-semibold text-theme-black group-hover:text-theme-black transition-colors duration-300"
   >
     <slot />

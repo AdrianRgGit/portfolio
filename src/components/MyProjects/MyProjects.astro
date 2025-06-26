@@ -1,5 +1,102 @@
-<section id="my-projects" class="h-screen flex items-center justify-center">
-  <h2 class="text-6xl font-titulo font-bold mb-12 text-center">
-    Mis proyectos
-  </h2>
+---
+import { Calendar } from "@lucide/astro";
+import MyProjectsBentoCard from "./MyProjectsBentoCard.astro";
+import CustomBadge from "../ui/CustomBadge.astro";
+import SpecialitiesWrapper from "../common/SpecialitiesWrapper.astro";
+import CustomButton from "../ui/CustomButton.astro";
+import CustomButtonChevron from "../ui/CustomButtonChevron.astro";
+---
+
+<section id="my-projects" class="h-screen px-12">
+  <h2 class="text-6xl font-titulo font-bold mb-12">Mis proyectos</h2>
+
+  <div class="h-full grid grid-cols-1 gap-x-6 md:grid-cols-2">
+    <!-- NOTE: TEXTO DEL PROYECTO -->
+    <article class="flex flex-col justify-evenly">
+      <div class="flex gap-x-4 items-center">
+        <CustomBadge>Branding</CustomBadge>
+        <div class="text-theme-gray flex items-center gap-x-1">
+          <Calendar size={16} />
+          <p>2025</p>
+        </div>
+      </div>
+
+      <div class="space-y-2">
+        <h3 class="font-semibold text-4xl">Nombre del proyecto</h3>
+        <p class="text-font-gray font-semibold">
+          Que se ha hecho en el proyecto
+        </p>
+      </div>
+
+      <p class="text-font-gray">
+        Breve descripción del proyecto. Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Aliquid rem quidem suscipit molestiae illo. Harum fuga
+        corporis tenetur! Consequuntur praesentium molestias adipisci blanditiis
+        similique voluptatum esse dolore vero illum consequatur.
+      </p>
+
+      <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-x-6">
+        <div>
+          <p>Cliente</p>
+          <p>Nombre cliente</p>
+        </div>
+
+        <div>
+          <p>Duración</p>
+          <p>3 meses</p>
+        </div>
+      </div>
+
+      <div>
+        <SpecialitiesWrapper />
+      </div>
+
+      <CustomButton href="#" target="_blank" class="w-40">
+        Ver proyecto
+      </CustomButton>
+    </article>
+
+    <!-- NOTE: BENTO DE LOS PROYECTOS -->
+    <article>
+      <div class="flex items-center justify-between">
+        <p>Explorar proyectos</p>
+
+        <div class="flex items-center gap-x-4">
+          <CustomButtonChevron
+            direction="left"
+            onClick={() => console.log("Izquierda")}
+          />
+          <CustomButtonChevron
+            direction="right"
+            onClick={() => console.log("Derecha")}
+          />
+        </div>
+      </div>
+
+      <!-- BENTO GRID -->
+      <div class="h-full mt-6 grid grid-cols-2 grid-rows-2 gap-4">
+        <MyProjectsBentoCard
+          title="Proyecto 1"
+          subtitle="Descripción breve del proyecto 1"
+          badge="Branding"
+          colSpan={2}
+          class="bg-theme-blue"
+        />
+        <MyProjectsBentoCard
+          title="Proyecto 1"
+          subtitle="Descripción breve del proyecto 2"
+          badge="Branding"
+          colSpan={1}
+          class="bg-theme-pink"
+        />
+        <MyProjectsBentoCard
+          title="Proyecto 1"
+          subtitle="Descripción breve del proyecto 3"
+          badge="Branding"
+          colSpan={1}
+          class="bg-theme-orange"
+        />
+      </div>
+    </article>
+  </div>
 </section>
