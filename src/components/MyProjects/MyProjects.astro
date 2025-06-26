@@ -8,11 +8,11 @@ import CustomButtonChevron from "../ui/CustomButtonChevron.astro";
 ---
 
 <section id="my-projects" class="h-screen px-12">
-  <h2 class="text-6xl font-titulo font-bold mb-12">Mis proyectos</h2>
-
+  
   <div class="h-full grid grid-cols-1 gap-x-6 md:grid-cols-2">
     <!-- NOTE: TEXTO DEL PROYECTO -->
     <article class="flex flex-col justify-evenly">
+      <h2 class="text-6xl font-titulo font-bold mb-12">Mis proyectos</h2>
       <div class="flex gap-x-4 items-center">
         <CustomBadge>Branding</CustomBadge>
         <div class="text-theme-gray flex items-center gap-x-1">
@@ -57,7 +57,7 @@ import CustomButtonChevron from "../ui/CustomButtonChevron.astro";
     </article>
 
     <!-- NOTE: BENTO DE LOS PROYECTOS -->
-    <article>
+    <article class="max-h-full py-10">
       <div class="flex items-center justify-between">
         <p>Explorar proyectos</p>
 
@@ -74,7 +74,7 @@ import CustomButtonChevron from "../ui/CustomButtonChevron.astro";
       </div>
 
       <!-- BENTO GRID -->
-      <div class="h-full mt-6 grid grid-cols-2 grid-rows-2 gap-4">
+      <div class="h-full grid grid-cols-2 grid-rows-2 gap-4 py-4">
         <MyProjectsBentoCard
           title="Proyecto 1"
           subtitle="Descripción breve del proyecto 1"
