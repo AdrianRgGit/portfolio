@@ -1,10 +1,11 @@
-import { useRef, useEffect } from "preact/hooks";
+import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { useRef } from "react";
 
 export default function AnimatedCurvedText() {
   const textRef = useRef(null);
 
-  useEffect(() => {
+  useGSAP(() => {
     if (textRef.current) {
       gsap.to(textRef.current, {
         attr: { startOffset: "40%" },
