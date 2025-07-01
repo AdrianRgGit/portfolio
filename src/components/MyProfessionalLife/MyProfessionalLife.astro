@@ -1,13 +1,19 @@
+---
+import Timeline from "./Timeline.jsx";
+---
+
 <section
   id="my-professional-life"
-  class="h-screen flex flex-col items-center py-6"
+  class="min-h-screen flex flex-col items-center py-6"
 >
   <h2 class="text-6xl font-titulo font-bold mb-12 text-center">
     Mi vida profesional
   </h2>
 
-  <p class="max-w-2xl text-center text-font-gray">
-    Mi trayectoria profesional refleajndo crecimiento, aprendizaje y
-    contribuciones significativas en cada etapa de mi carrera
+  <p class="max-w-2xl text-center text-font-gray mb-16">
+    Mi trayectoria profesional reflejando crecimiento, aprendizaje y
+    contribuciones significativas en cada etapa de mi carrera.
   </p>
+
+  <Timeline client:load />
 </section>
