@@ -1,23 +1,22 @@
 ---
 import { Download } from "@lucide/astro";
 
-const { href, target, class: className, ...props } = Astro.props;
+const { file, class: className, ...props } = Astro.props;
 ---
 
-<button
-  type="button"
+<a
+  href={file}
+  download
   class={`btn-hover-fill group flex items-center gap-2 px-8 py-2 rounded-full border border-theme-black cursor-pointer shadow transition-shadow duration-300 hover:shadow-[0_0_15px_rgba(176,255,111,0.6)] ${className}`}
   {...props}
 >
   <Download class="download-icon" />
-  <a
-    href={href}
-    target={target || "_self"}
+  <span
     class="font-semibold text-theme-black group-hover:text-theme-black transition-colors duration-300"
   >
     <slot />
-  </a>
-</button>
+  </span>
+</a>
 
 <style>
   .btn-hover-fill {
