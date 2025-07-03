@@ -1,6 +1,7 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import TimelineItem from "./TimelineItem";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -12,6 +13,8 @@ const experiences = [
     description:
       "Desarrollé interfaces de usuario interactivas con React y TailwindCSS, trabajando con un equipo ágil.",
     side: "left",
+    explanation:
+      "Interfaz y experiencia de usuario usando React y TailwindCSS.",
   },
   {
     year: "2022",
@@ -20,6 +23,7 @@ const experiences = [
     description:
       "Encargado del diseño visual de productos digitales, mejorando la experiencia del usuario.",
     side: "right",
+    explanation: "Diseño visual enfocado en mejorar la experiencia final.",
   },
   {
     year: "2023",
@@ -28,6 +32,8 @@ const experiences = [
     description:
       "Campañas creativas para redes sociales y medios digitales con enfoque en resultados medibles.",
     side: "left",
+    explanation:
+      "Creatividad y diseño para marketing digital con impacto real.",
   },
 ];
 
@@ -48,34 +54,35 @@ const TimeLine = () => {
         end: () => `+=${window.innerWidth * sections.length}`,
       },
     });
+
+    sections.forEach((section) => {
+      gsap.fromTo(
+        section.querySelector(".content"),
+        { opacity: 0, y: 50 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          scrollTrigger: {
+            trigger: section,
+            start: "top center",
+            toggleActions: "play none none reverse",
+          },
+        },
+      );
+    });
   }, []);
 
   return (
     <div className="relative h-screen overflow-hidden" ref={timelineRef}>
+      {/* Línea central vertical fija */}
+      <div className="bg-theme-green absolute top-12 bottom-12 left-1/2 z-0 w-1 -translate-x-1/2 rounded" />
+
       <div className="flex h-full">
         {experiences.map((exp, i) => (
-          <div
-            key={i}
-            className={`timeline-item flex h-full w-screen flex-none items-center justify-${
-              exp.side === "left" ? "start" : "end"
-            } px-20`}
-          >
-            <div
-              className={`max-w-md rounded-lg border bg-white p-6 shadow-lg ${
-                exp.side === "left" ? "text-left" : "text-right"
-              }`}
-            >
-              <h2 className="text-xl font-bold">{exp.year}</h2>
-              <h3 className="text-lg">{exp.company}</h3>
-              <p className="text-sm font-medium text-gray-600">{exp.title}</p>
-              <p className="mt-2 text-gray-500">{exp.description}</p>
-            </div>
-          </div>
+          <TimelineItem key={i} exp={exp} />
         ))}
       </div>
-
-      {/* Línea central */}
-      <div className="absolute top-0 bottom-0 left-1/2 z-0 p-0.5 -translate-x-1/2 transform bg-theme-green" />
     </div>
   );
 };
