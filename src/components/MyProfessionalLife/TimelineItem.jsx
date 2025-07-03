@@ -2,14 +2,14 @@ import TimelineCircle from "./TimelineCircle";
 
 const TimelineItem = ({ exp }) => {
   return (
-    <div className="timeline-item relative flex h-full w-screen flex-none items-center justify-center px-12 md:px-24">
+    <article className="timeline-item relative flex h-full w-screen flex-none items-center justify-center px-12 md:px-24">
       <div className="relative flex w-full max-w-6xl items-center justify-between">
         {exp.side === "left" ? (
           <>
             <div className="content border-theme-green bg-theme-white z-10 max-w-md rounded-lg border p-8 text-left shadow-lg">
-              <h2 className="text-font-green text-2xl font-extrabold">
+              <h4 className="text-font-green text-2xl font-extrabold">
                 {exp.year}
-              </h2>
+              </h4>
               <h3 className="text-font-gray mt-2 text-xl font-semibold">
                 {exp.company}
               </h3>
@@ -40,9 +40,9 @@ const TimelineItem = ({ exp }) => {
             </div>
 
             <div className="content border-theme-green bg-theme-white z-10 max-w-md rounded-lg border p-8 text-right shadow-lg">
-              <h2 className="text-font-gray text-2xl font-extrabold">
+              <h4 className="text-font-gray text-2xl font-extrabold">
                 {exp.year}
-              </h2>
+              </h4>
               <h3 className="text-font-gray mt-2 text-xl font-semibold">
                 {exp.company}
               </h3>
@@ -56,7 +56,7 @@ const TimelineItem = ({ exp }) => {
           </>
         )}
       </div>
-    </div>
+    </article>
   );
 };
 

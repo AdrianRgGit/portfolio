@@ -1,5 +1,7 @@
 ---
+import CustomButton from "../ui/CustomButton.astro";
 import Timeline from "./Timeline";
+import CustomDownloadButton from "../ui/CustomDownloadButton.astro";
 ---
 
 <section
@@ -15,5 +17,43 @@ import Timeline from "./Timeline";
     contribuciones significativas en cada etapa de mi carrera.
   </p>
 
-  <Timeline client:only="react" />
+  <!-- <Timeline client:only="react" /> -->
+
+  <article class="mt-24 pt-6 px-12 w-full">
+    <div
+      class="px-8 pt-16 border-t-2 border-theme-gray/30 flex flex-col items-center space-y-24"
+    >
+      <div class="space-y-6 text-center">
+        <h3 class="text-4xl font-semibold">Resumen profesional</h3>
+        <p>
+          Competencias y logros acumulados a lo largo de mi trayectoria
+          profesional.
+        </p>
+      </div>
+
+      <div class="flex flex-wrap justify-between w-full">
+        <div>
+          <p>2+</p>
+          <p>Años de experiencia</p>
+        </div>
+
+        <div>
+          <p>5+</p>
+          <p>Proyectos destacados</p>
+        </div>
+
+        <div>
+          <p>5+</p>
+          <p>Equipos liderados</p>
+        </div>
+
+        <div>
+          <p>15+</p>
+          <p>Herramientas dominadas</p>
+        </div>
+      </div>
+
+      <CustomDownloadButton>Descargar CV</CustomDownloadButton>
+    </div>
+  </article>
 </section>
