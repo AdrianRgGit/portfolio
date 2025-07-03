@@ -44,7 +44,7 @@ const TimeLine = () => {
     const sections = gsap.utils.toArray(".timeline-item");
 
     gsap.to(sections, {
-      xPercent: -100 * (sections.length - 1),
+      yPercent: -100 * (sections.length - 1),
       ease: "none",
       scrollTrigger: {
         trigger: timelineRef.current,
@@ -54,23 +54,6 @@ const TimeLine = () => {
         end: () => `+=${window.innerWidth * sections.length}`,
       },
     });
-
-    sections.forEach((section) => {
-      gsap.fromTo(
-        section.querySelector(".content"),
-        { opacity: 0, y: 50 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          scrollTrigger: {
-            trigger: section,
-            start: "top center",
-            toggleActions: "play none none reverse",
-          },
-        },
-      );
-    });
   }, []);
 
   return (
@@ -78,7 +61,7 @@ const TimeLine = () => {
       {/* Línea central vertical fija */}
       <div className="bg-theme-green absolute top-12 bottom-12 left-1/2 z-0 w-1 -translate-x-1/2 rounded" />
 
-      <div className="flex h-full">
+      <div className="flex h-full flex-col">
         {experiences.map((exp, i) => (
           <TimelineItem key={i} exp={exp} />
         ))}
