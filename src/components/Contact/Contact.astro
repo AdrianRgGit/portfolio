@@ -1,25 +1,62 @@
 ---
-import CustomInputText from "../ui/CustomInputText.jsx";
 import ContactForm from "./ContactForm";
 ---
 
 <section id="contact" class="h-screen flex flex-col py-6 px-12">
-  <div>
+  <div class="space-y-4 mb-8">
     <h2 class="text-6xl font-bold">Contacta conmigo</h2>
-    <p>
+    <p class="max-w-xl text-font-gray">
       ¿Tienes un proyecto en mente? Me encantaría escuchar sobre tu idea y
       explorar cómo podemos trabajar juntos para hacerla realidad.
     </p>
   </div>
 
-  <div class="grid grid-cols-2">
+  <div class="grid grid-cols-2 gap-x-24">
     <ContactForm client:load />
 
-    <div>
-      <h3>Información de contacto</h3>
-      <p>email</p>
-      <p>teléfono</p>
-      <p>ubicación actual</p>
-    </div>
+    <article class="space-y-8">
+      <h3 class="text-2xl font-semibold">Información de contacto</h3>
+
+      <div class="flex items-center gap-x-4">
+        <div class="h-14 w-14 rounded-full bg-theme-pink"></div>
+        <div>
+          <p>email</p>
+          <p>email@email.es</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-x-4">
+        <div class="h-14 w-14 rounded-full bg-theme-blue"></div>
+        <div>
+          <p>email</p>
+          <p>email@email.es</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-x-4">
+        <div class="h-14 w-14 rounded-full bg-theme-orange"></div>
+        <div>
+          <p>email</p>
+          <p>email@email.es</p>
+        </div>
+      </div>
+
+      <div class="space-y-2">
+        <p class="text-lg font-semibold">Sígueme en</p>
+        <div class="flex items-center gap-x-4">
+          <div class="flex items-center gap-x-4">
+            <div class="h-14 w-14 rounded-full bg-theme-orange"></div>
+          </div>
+
+          <div class="flex items-center gap-x-4">
+            <div class="h-14 w-14 rounded-full bg-theme-orange"></div>
+          </div>
+
+          <div class="flex items-center gap-x-4">
+            <div class="h-14 w-14 rounded-full bg-theme-orange"></div>
+          </div>
+        </div>
+      </div>
+    </article>
   </div>
 </section>
