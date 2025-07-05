@@ -1,5 +1,6 @@
 ---
-import CustomInputText from "../ui/CustomInputText.astro";
+import CustomInputText from "../ui/CustomInputText.jsx";
+import ContactForm from "./ContactForm";
 ---
 
 <section id="contact" class="h-screen flex flex-col py-6 px-12">
@@ -12,15 +13,7 @@ import CustomInputText from "../ui/CustomInputText.astro";
   </div>
 
   <div class="grid grid-cols-2">
-    <form action="">
-      <CustomInputText
-        id="name"
-        label="Nombre"
-        name="name"
-        placeholder="Tu nombre"
-        value=""
-      />
-    </form>
+    <ContactForm client:load />
 
     <div>
       <h3>Información de contacto</h3>
