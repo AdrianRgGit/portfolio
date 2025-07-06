@@ -16,12 +16,12 @@ export default function AnimatedCurvedText() {
   }, []);
 
   return (
-    <svg
-      width="200"
-      height="200"
-      viewBox="0 0 200 200"
-      class="absolute right-0"
-    >
+<svg
+  width="160"
+  height="160"
+  viewBox="0 0 200 200"
+  className="absolute right-0 top-0 md:right-0 md:top-auto md:bottom-0 w-32 hidden md:block md:w-48 lg:w-52"
+>
       <defs>
         {/* NOTE: FILTRO DE COLOR */}
         {/* <filter id="blur-bg" x="-50%" y="-50%" width="200%" height="200%">
