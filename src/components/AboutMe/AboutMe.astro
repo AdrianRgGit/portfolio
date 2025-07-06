@@ -4,11 +4,11 @@ import CustomButton from "../ui/CustomButton.astro";
 import SpecialitiesWrapper from "../common/SpecialitiesWrapper.astro";
 ---
 
-<section id="about-me" class="min-h-screen flex flex-col justify-center py-6 px-12">
+<section id="about-me" class="flex flex-col justify-center py-6 px-12 md:h-screen ">
   <h2 class="text-6xl font-bold mb-12 text-center">Sobre mí</h2>
 
   <div class="grid grid-cols-1 md:grid-cols-2 gap-x-20 items-start">
-    <div class="flex flex-col items-center justify-start md:items-end">
+    <div class="flex flex-col md:items-end">
       <div class="flex items-center justify-center overflow-hidden">
         <img
           src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=facearea&w=400&h=400&facepad=2"
@@ -17,7 +17,7 @@ import SpecialitiesWrapper from "../common/SpecialitiesWrapper.astro";
         />
       </div>
 
-      <div class="mt-4 flex flex-col items-end">
+      <div class="mt-4 flex flex-col md:items-end">
         <div class="flex items-center gap-x-1">
           <MapPin size={16} />
           <p class="">Valencia, España</p>
@@ -31,7 +31,7 @@ import SpecialitiesWrapper from "../common/SpecialitiesWrapper.astro";
       </div>
     </div>
 
-    <div class="space-y-10">
+    <div class="space-y-10 mt-6 md:mt-0">
       <article class="space-y-4">
         <h3 class="text-3xl font-bold mb-2">Desarrollador y Diseñador Web</h3>
         <p class="text-font-gray">
