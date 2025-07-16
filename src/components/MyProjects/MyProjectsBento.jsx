@@ -23,7 +23,7 @@ const MyProjectsBento = () => {
 
           <div className="space-y-2">
             <h3 className="text-4xl font-semibold">{projects[0]?.title}</h3>
-            <p className="font-semibold text-font-gray">
+            <p className="text-font-gray font-semibold">
               {projects[0]?.briefDescription}
             </p>
           </div>
@@ -63,10 +63,9 @@ const MyProjectsBento = () => {
             {projects.slice(0, 4).map((project, index) => (
               <MyProjectsBentoCard
                 key={project.id}
-                title={project.title}
-                subtitle={project.briefDescription}
-                badge={project.mainTag}
+                project={project}
                 colSpan={index === 0 ? 2 : 1}
+                highlighted={index === 1}
               />
             ))}
           </div>

@@ -4,7 +4,11 @@ export default [
     createdAt: "2023-01-01",
     updatedAt: "2023-01-02",
     endedAt: "2023-01-03",
-    banner: "https://example.com/banner.jpg",
+    banner:
+      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=facearea&w=400&h=400&facepad=2",
+    bannerGif:
+      "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=facearea&w=400&h=400&facepad=2",
+    bannerAlt: "Banner del proyecto 1",
     customer: "Grupo Neural",
     title: "Proyecto 1",
     briefDescription:
@@ -23,7 +27,9 @@ export default [
     createdAt: "2023-02-10",
     updatedAt: "2023-02-15",
     endedAt: "2023-03-01",
-    banner: "https://example.com/banner2.jpg",
+    banner: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=facearea&w=400&h=400&facepad=2",
+    bannerGif: "https://images.unsplash.com/photo-1465101178521-c1a4c8a0f8f5?auto=format&fit=facearea&w=400&h=400&facepad=2",
+    bannerAlt: "Banner del proyecto 2",
     customer: "Tech Solutions",
     title: "Proyecto 2",
     briefDescription:
@@ -42,7 +48,9 @@ export default [
     createdAt: "2022-11-05",
     updatedAt: "2022-12-01",
     endedAt: "2022-12-20",
-    banner: "https://example.com/banner3.jpg",
+    banner: "https://images.unsplash.com/photo-1508780709619-79562169bc64?auto=format&fit=facearea&w=400&h=400&facepad=2",
+    bannerGif: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=facearea&w=400&h=400&facepad=2",
+    bannerAlt: "Banner del proyecto 3",
     customer: "InnovateX",
     title: "Proyecto 3",
     briefDescription: "Sistema de análisis de datos para el sector financiero.",

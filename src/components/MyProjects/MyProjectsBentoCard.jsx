@@ -1,26 +1,31 @@
-const MyProjectsBentoCard = ({
-  title,
-  subtitle,
-  badge,
-  colSpan = 1,
-  highlighted = false,
-  className = "bg-blue-600",
-}) => {
+import CustomBadge from "../ui/CustomBadge";
+import { useState } from "react";
+
+const MyProjectsBentoCard = ({ project, colSpan, highlighted = false }) => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  const backgroundImage = isHovered ? project.bannerGif : project.banner;
+
   return (
     <div
-      className={`relative col-span-${colSpan} flex flex-col justify-between rounded-xl border-4 border-green-400 p-4 ${className}`}
+      className={`relative col-span-${colSpan} border-theme-green flex flex-col justify-between rounded-xl border-4 p-4 transition-all duration-300`}
+      style={{
+        backgroundImage: `url(${backgroundImage})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
     >
-      <span className="mb-2 inline-block rounded-full bg-green-200 px-2 py-1 text-xs text-white">
-        {badge}
-      </span>
+      <CustomBadge>{project.mainTag}</CustomBadge>
 
       <div>
-        <h4 className="font-semibold text-white">{title}</h4>
-        <p className="text-sm text-gray-200">{subtitle}</p>
+        <h4 className="text-font-white font-semibold">{project.title}</h4>
+        <p className="text-font-gray text-sm">{project.briefDescription}</p>
       </div>
 
       {highlighted && (
-        <div className="absolute top-2 right-2 h-2 w-2 rounded-full bg-green-400" />
+        <div className="bg-theme-green absolute top-2 right-2 h-2 w-2 rounded-full" />
       )}
     </div>
   );
