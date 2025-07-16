@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Calendar } from "lucide-react";
-import MyProjectsBentoCard from "./MyProjectsBentoCard";
 
+import MyProjectsBentoCard from "./MyProjectsBentoCard";
 import projects from "../../data/projects";
 import CustomButton from "../ui/CustomButton/CustomButton";
 import CustomButtonChevron from "../ui/CustomButtonChevron";
@@ -13,13 +13,12 @@ const MyProjectsBento = () => {
 
   const windowSize = 3;
 
-  // Asegurar que el proyecto seleccionado esté siempre visible y sea el primero
+  // Asegura que el proyecto seleccionado esté dentro de la ventana visible
   useEffect(() => {
     if (
       selectedProjectIndex < windowStartIndex ||
       selectedProjectIndex >= windowStartIndex + windowSize
     ) {
-      // Mover la ventana para que el seleccionado sea el primero en la ventana
       setWindowStartIndex(selectedProjectIndex);
     }
   }, [selectedProjectIndex, windowStartIndex]);
@@ -27,19 +26,10 @@ const MyProjectsBento = () => {
   const canGoLeft = windowStartIndex > 0;
   const canGoRight = windowStartIndex + windowSize < projects.length;
 
-  // Slice de proyectos visibles
-  let visibleProjects = projects.slice(
+  const visibleProjects = projects.slice(
     windowStartIndex,
     windowStartIndex + windowSize,
   );
-
-  // Reordenar para que el proyecto seleccionado sea el primero en la cuadrícula
-  if (visibleProjects.includes(projects[selectedProjectIndex])) {
-    visibleProjects = [
-      projects[selectedProjectIndex],
-      ...visibleProjects.filter((p) => p !== projects[selectedProjectIndex]),
-    ];
-  }
 
   const handleLeftClick = () => {
     if (canGoLeft) {
@@ -118,16 +108,16 @@ const MyProjectsBento = () => {
 
         <div className="grid h-full grid-cols-2 grid-rows-2 gap-4 py-4">
           {visibleProjects.map((project, index) => {
+            const globalIndex = projects.indexOf(project);
+            const isSelected = globalIndex === selectedProjectIndex;
+
             return (
               <MyProjectsBentoCard
                 key={project.id}
                 project={project}
-                colSpan={index === 0 ? 2 : 1} // El primero siempre grande
-                highlighted={index === 1}
-                onSelect={() => {
-                  const globalIndex = projects.indexOf(project);
-                  setSelectedProjectIndex(globalIndex);
-                }}
+                colSpan={index === 0 ? 2 : 1} // El primero grande
+                highlighted={isSelected}
+                onSelect={() => setSelectedProjectIndex(globalIndex)}
               />
             );
           })}
