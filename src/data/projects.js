@@ -1,0 +1,58 @@
+export default [
+  {
+    id: "1",
+    createdAt: "2023-01-01",
+    updatedAt: "2023-01-02",
+    endedAt: "2023-01-03",
+    banner: "https://example.com/banner.jpg",
+    customer: "Grupo Neural",
+    title: "Proyecto 1",
+    briefDescription:
+      "Un proyecto de ejemplo para demostrar la estructura de datos.",
+    description:
+      "Este es un proyecto de ejemplo que muestra cómo estructurar datos en un archivo JavaScript. Incluye información básica como el título, descripción, fecha de creación y actualización, así como etiquetas para categorizar el proyecto.",
+    mainTag: "javascript",
+    tags: ["javascript", "react", "redux"],
+    url: "https://google.com",
+    repository: "https://github.com",
+    closed: true,
+    private: false,
+  },
+  {
+    id: "2",
+    createdAt: "2023-02-10",
+    updatedAt: "2023-02-15",
+    endedAt: "2023-03-01",
+    banner: "https://example.com/banner2.jpg",
+    customer: "Tech Solutions",
+    title: "Proyecto 2",
+    briefDescription:
+      "Desarrollo de una aplicación web para gestión de tareas.",
+    description:
+      "Este proyecto consistió en crear una aplicación web moderna usando React y Node.js para gestionar tareas y equipos de trabajo. Se implementaron funcionalidades de autenticación y notificaciones.",
+    mainTag: "react",
+    tags: ["react", "nodejs", "mongodb"],
+    url: "https://techsolutions.com/app",
+    repository: "https://github.com/techsolutions/app",
+    closed: false,
+    private: true,
+  },
+  {
+    id: "3",
+    createdAt: "2022-11-05",
+    updatedAt: "2022-12-01",
+    endedAt: "2022-12-20",
+    banner: "https://example.com/banner3.jpg",
+    customer: "InnovateX",
+    title: "Proyecto 3",
+    briefDescription: "Sistema de análisis de datos para el sector financiero.",
+    description:
+      "Se desarrolló una plataforma de análisis de datos financieros utilizando Python y Dash. El sistema permite visualizar métricas clave y generar reportes personalizados.",
+    mainTag: "python",
+    tags: ["python", "dash", "finanzas"],
+    url: "https://innovatex.com/analytics",
+    repository: "https://github.com/innovatex/analytics",
+    closed: true,
+    private: false,
+  },
+];
