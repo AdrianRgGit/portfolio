@@ -44,7 +44,7 @@ const MyProjectsBento = () => {
           <CustomBadge>{selectedProject?.mainTag}</CustomBadge>
           <div className="text-font-gray flex items-center gap-x-1">
             <Calendar size={16} />
-            <p>{new Date(selectedProject?.createdAt).getFullYear()}</p>
+            <p>{new Date(selectedProject?.startedAt).getFullYear()}</p>
           </div>
         </div>
 
@@ -65,7 +65,7 @@ const MyProjectsBento = () => {
           <div>
             <p className="font-medium">Duración</p>
             <p>
-              {selectedProject?.createdAt} - {selectedProject?.endedAt}
+              {selectedProject?.startedAt} - {selectedProject?.endedAt}
             </p>
           </div>
         </div>

@@ -12,7 +12,7 @@ const MyProjectsBentoCard = ({
 
   return (
     <article
-      className={`relative col-span-${colSpan} border-theme-green cursor-pointer rounded-xl border-4 transition-all duration-300`}
+      className={`relative col-span-${colSpan} ${highlighted ? "border-theme-green" : "border-theme-light-gray"} cursor-pointer rounded-xl border-4 transition-all duration-300`}
       style={{
         backgroundImage: `url(${backgroundImage})`,
         backgroundSize: "cover",
@@ -31,7 +31,7 @@ const MyProjectsBentoCard = ({
           <CustomBadge>{project.mainTag}</CustomBadge>
         </span>
 
-        <div className="rounded-b-xl overflow-hidden p-4 backdrop-blur-sm">
+        <div className="overflow-hidden rounded-b-xl p-4 backdrop-blur-sm">
           <h4 className="text-font-white font-semibold">{project.title}</h4>
           <p className="text-font-white text-sm">{project.briefDescription}</p>
         </div>

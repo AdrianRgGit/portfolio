@@ -1,34 +1,32 @@
 export default [
   {
     id: "1",
-    createdAt: "2023-01-01",
-    updatedAt: "2023-01-02",
-    endedAt: "2023-01-03",
-    banner:
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=facearea&w=400&h=400&facepad=2",
-    bannerGif:
-      "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=facearea&w=400&h=400&facepad=2",
-    bannerAlt: "Banner del proyecto 1",
+    startedAt: "2025-07-09",
+    updatedAt: "",
+    endedAt: "2025-07-16",
+    banner: "/media/my-projects/desktop/banner-logo.webp",
+    bannerGif: "/media/my-projects/desktop/banner-logo.gif",
+    bannerAlt: "Banner de la landing de logo",
     customer: "Grupo Neural",
-    title: "Proyecto 1",
-    briefDescription:
-      "Un proyecto de ejemplo para demostrar la estructura de datos.",
+    title: "Logo",
+    briefDescription: "Landing para presentar el modelo de negocio de Logo.",
     description:
-      "Este es un proyecto de ejemplo que muestra cómo estructurar datos en un archivo JavaScript. Incluye información básica como el título, descripción, fecha de creación y actualización, así como etiquetas para categorizar el proyecto.",
-    mainTag: "javascript",
-    tags: ["javascript", "react", "redux"],
+      "Este proyecto consistió en el desarrollo de una landing page para presentar el modelo de negocio de Logo del grupo Neural..",
+    mainTag: "landing",
+    tags: ["javascript", "astrojs", "tailwindcss", "preact", "gsap"],
     url: "https://google.com",
-    repository: "https://github.com",
+    repository: "",
     closed: true,
-    private: false,
+    private: true,
   },
   {
     id: "2",
-    createdAt: "2023-02-10",
+    startedAt: "2023-02-10",
     updatedAt: "2023-02-15",
     endedAt: "2023-03-01",
-    banner: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=facearea&w=400&h=400&facepad=2",
-    bannerGif: "https://images.unsplash.com/photo-1465101178521-c1a4c8a0f8f5?auto=format&fit=facearea&w=400&h=400&facepad=2",
+    banner: "/media/my-projects/desktop/banner-intensive.webp",
+    bannerGif:
+      "https://images.unsplash.com/photo-1465101178521-c1a4c8a0f8f5?auto=format&fit=facearea&w=400&h=400&facepad=2",
     bannerAlt: "Banner del proyecto 2",
     customer: "Tech Solutions",
     title: "Proyecto 2",
@@ -45,11 +43,13 @@ export default [
   },
   {
     id: "3",
-    createdAt: "2022-11-05",
+    startedAt: "2022-11-05",
     updatedAt: "2022-12-01",
     endedAt: "2022-12-20",
-    banner: "https://images.unsplash.com/photo-1508780709619-79562169bc64?auto=format&fit=facearea&w=400&h=400&facepad=2",
-    bannerGif: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=facearea&w=400&h=400&facepad=2",
+    banner:
+      "https://images.unsplash.com/photo-1508780709619-79562169bc64?auto=format&fit=facearea&w=400&h=400&facepad=2",
+    bannerGif:
+      "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=facearea&w=400&h=400&facepad=2",
     bannerAlt: "Banner del proyecto 3",
     customer: "InnovateX",
     title: "Proyecto 3",
@@ -65,11 +65,13 @@ export default [
   },
   {
     id: "4",
-    createdAt: "2023-04-12",
+    startedAt: "2023-04-12",
     updatedAt: "2023-04-20",
     endedAt: "2023-05-01",
-    banner: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=facearea&w=400&h=400&facepad=2",
-    bannerGif: "https://images.unsplash.com/photo-1465101058546-8cfb7c6b7c2c?auto=format&fit=facearea&w=400&h=400&facepad=2",
+    banner:
+      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=facearea&w=400&h=400&facepad=2",
+    bannerGif:
+      "https://images.unsplash.com/photo-1465101058546-8cfb7c6b7c2c?auto=format&fit=facearea&w=400&h=400&facepad=2",
     bannerAlt: "Banner del proyecto 4",
     customer: "SmartHome Inc.",
     title: "Proyecto 4",
@@ -85,11 +87,13 @@ export default [
   },
   {
     id: "5",
-    createdAt: "2023-06-01",
-    updatedAt: "2023-06-10",
-    endedAt: "2023-06-30",
-    banner: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=facearea&w=400&h=400&facepad=2",
-    bannerGif: "https://images.unsplash.com/photo-1465101060307-3c2b7c6b7c2c?auto=format&fit=facearea&w=400&h=400&facepad=2",
+    startedAt: "2025-07-09",
+    updatedAt: "",
+    endedAt: "2025-07-16",
+    banner:
+      "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=facearea&w=400&h=400&facepad=2",
+    bannerGif:
+      "https://images.unsplash.com/photo-1465101060307-3c2b7c6b7c2c?auto=format&fit=facearea&w=400&h=400&facepad=2",
     bannerAlt: "Banner del proyecto 5",
     customer: "EduTech",
     title: "Proyecto 5",
