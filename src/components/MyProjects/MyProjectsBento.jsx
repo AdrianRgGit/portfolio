@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Calendar } from "lucide-react";
 
 import MyProjectsBentoCard from "./MyProjectsBentoCard";
@@ -12,17 +12,6 @@ const MyProjectsBento = () => {
   const [windowStartIndex, setWindowStartIndex] = useState(0);
 
   const windowSize = 3;
-
-  // Asegura que el proyecto seleccionado esté dentro de la ventana visible
-  useEffect(() => {
-    if (
-      selectedProjectIndex < windowStartIndex ||
-      selectedProjectIndex >= windowStartIndex + windowSize
-    ) {
-      setWindowStartIndex(selectedProjectIndex);
-    }
-  }, [selectedProjectIndex, windowStartIndex]);
-
   const canGoLeft = windowStartIndex > 0;
   const canGoRight = windowStartIndex + windowSize < projects.length;
 
@@ -33,15 +22,13 @@ const MyProjectsBento = () => {
 
   const handleLeftClick = () => {
     if (canGoLeft) {
-      setWindowStartIndex((prev) => Math.max(0, prev - windowSize));
+      setWindowStartIndex((prev) => prev - windowSize);
     }
   };
 
   const handleRightClick = () => {
     if (canGoRight) {
-      setWindowStartIndex((prev) =>
-        Math.min(projects.length - windowSize, prev + windowSize),
-      );
+      setWindowStartIndex((prev) => prev + windowSize);
     }
   };
 
@@ -108,14 +95,14 @@ const MyProjectsBento = () => {
 
         <div className="grid h-full grid-cols-2 grid-rows-2 gap-4 py-4">
           {visibleProjects.map((project, index) => {
-            const globalIndex = projects.indexOf(project);
+            const globalIndex = windowStartIndex + index;
             const isSelected = globalIndex === selectedProjectIndex;
 
             return (
               <MyProjectsBentoCard
                 key={project.id}
                 project={project}
-                colSpan={index === 0 ? 2 : 1} // El primero grande
+                colSpan={index === 0 ? 2 : 1} // Primer proyecto de cada página es grande
                 highlighted={isSelected}
                 onSelect={() => setSelectedProjectIndex(globalIndex)}
               />
