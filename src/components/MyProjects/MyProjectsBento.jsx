@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Calendar } from "lucide-react";
 import MyProjectsBentoCard from "./MyProjectsBentoCard";
 
@@ -9,14 +9,53 @@ import CustomBadge from "../ui/CustomBadge";
 
 const MyProjectsBento = () => {
   const [selectedProjectIndex, setSelectedProjectIndex] = useState(0);
+  const [windowStartIndex, setWindowStartIndex] = useState(0);
 
-  // Mueve el proyecto seleccionado al inicio
-  const displayedProjects = [
-    projects[selectedProjectIndex],
-    ...projects.filter((_, idx) => idx !== selectedProjectIndex),
-  ].slice(0, 4); // Asegura máximo 4 proyectos
+  const windowSize = 3;
 
-  const selectedProject = displayedProjects[0];
+  // Asegurar que el proyecto seleccionado esté siempre visible y sea el primero
+  useEffect(() => {
+    if (
+      selectedProjectIndex < windowStartIndex ||
+      selectedProjectIndex >= windowStartIndex + windowSize
+    ) {
+      // Mover la ventana para que el seleccionado sea el primero en la ventana
+      setWindowStartIndex(selectedProjectIndex);
+    }
+  }, [selectedProjectIndex, windowStartIndex]);
+
+  const canGoLeft = windowStartIndex > 0;
+  const canGoRight = windowStartIndex + windowSize < projects.length;
+
+  // Slice de proyectos visibles
+  let visibleProjects = projects.slice(
+    windowStartIndex,
+    windowStartIndex + windowSize,
+  );
+
+  // Reordenar para que el proyecto seleccionado sea el primero en la cuadrícula
+  if (visibleProjects.includes(projects[selectedProjectIndex])) {
+    visibleProjects = [
+      projects[selectedProjectIndex],
+      ...visibleProjects.filter((p) => p !== projects[selectedProjectIndex]),
+    ];
+  }
+
+  const handleLeftClick = () => {
+    if (canGoLeft) {
+      setWindowStartIndex((prev) => Math.max(0, prev - windowSize));
+    }
+  };
+
+  const handleRightClick = () => {
+    if (canGoRight) {
+      setWindowStartIndex((prev) =>
+        Math.min(projects.length - windowSize, prev + windowSize),
+      );
+    }
+  };
+
+  const selectedProject = projects[selectedProjectIndex];
 
   return (
     <div className="grid h-full grid-cols-1 gap-x-6 md:grid-cols-2">
@@ -64,23 +103,34 @@ const MyProjectsBento = () => {
         <div className="flex items-center justify-between">
           <p>Explorar proyectos</p>
           <div className="flex items-center gap-x-4">
-            <CustomButtonChevron direction="left" />
-            <CustomButtonChevron />
+            <CustomButtonChevron
+              direction="left"
+              onClick={handleLeftClick}
+              disabled={!canGoLeft}
+            />
+            <CustomButtonChevron
+              direction="right"
+              onClick={handleRightClick}
+              disabled={!canGoRight}
+            />
           </div>
         </div>
 
         <div className="grid h-full grid-cols-2 grid-rows-2 gap-4 py-4">
-          {displayedProjects.map((project, index) => (
-            <MyProjectsBentoCard
-              key={project.id}
-              project={project}
-              colSpan={index === 0 ? 2 : 1}
-              highlighted={index === 1}
-              onSelect={() =>
-                setSelectedProjectIndex(projects.indexOf(project))
-              }
-            />
-          ))}
+          {visibleProjects.map((project, index) => {
+            return (
+              <MyProjectsBentoCard
+                key={project.id}
+                project={project}
+                colSpan={index === 0 ? 2 : 1} // El primero siempre grande
+                highlighted={index === 1}
+                onSelect={() => {
+                  const globalIndex = projects.indexOf(project);
+                  setSelectedProjectIndex(globalIndex);
+                }}
+              />
+            );
+          })}
         </div>
       </div>
     </div>
