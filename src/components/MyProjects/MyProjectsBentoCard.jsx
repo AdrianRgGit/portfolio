@@ -12,7 +12,7 @@ const MyProjectsBentoCard = ({
 
   return (
     <article
-      className={`relative col-span-${colSpan} border-theme-green flex cursor-pointer flex-col justify-between rounded-xl border-4 p-4 transition-all duration-300`}
+      className={`relative col-span-${colSpan} border-theme-green cursor-pointer rounded-xl border-4 transition-all duration-300`}
       style={{
         backgroundImage: `url(${backgroundImage})`,
         backgroundSize: "cover",
@@ -22,11 +22,19 @@ const MyProjectsBentoCard = ({
       onMouseLeave={() => setIsHovered(false)}
       onClick={onSelect}
     >
-      <CustomBadge>{project.mainTag}</CustomBadge>
+      <div
+        className={`flex h-full flex-col justify-between transition-opacity duration-300 ${
+          isHovered ? "invisible opacity-0" : "visible opacity-100"
+        }`}
+      >
+        <span className="p-4">
+          <CustomBadge>{project.mainTag}</CustomBadge>
+        </span>
 
-      <div>
-        <h4 className="text-font-white font-semibold">{project.title}</h4>
-        <p className="text-font-gray text-sm">{project.briefDescription}</p>
+        <div className="rounded-b-xl overflow-hidden p-4 backdrop-blur-sm">
+          <h4 className="text-font-white font-semibold">{project.title}</h4>
+          <p className="text-font-white text-sm">{project.briefDescription}</p>
+        </div>
       </div>
 
       {highlighted && (
