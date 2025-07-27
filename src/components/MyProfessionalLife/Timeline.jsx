@@ -3,39 +3,9 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import TimelineItem from "./TimelineItem";
 
-gsap.registerPlugin(ScrollTrigger);
+import experiences from "../../data/experiences.js";
 
-const experiences = [
-  {
-    year: "2021",
-    company: "Tech Corp",
-    title: "Frontend Developer",
-    description:
-      "Desarrollé interfaces de usuario interactivas con React y TailwindCSS, trabajando con un equipo ágil.",
-    side: "left",
-    explanation:
-      "Interfaz y experiencia de usuario usando React y TailwindCSS.",
-  },
-  {
-    year: "2022",
-    company: "Design Studio",
-    title: "UI/UX Designer",
-    description:
-      "Encargado del diseño visual de productos digitales, mejorando la experiencia del usuario.",
-    side: "right",
-    explanation: "Diseño visual enfocado en mejorar la experiencia final.",
-  },
-  {
-    year: "2023",
-    company: "Creative Minds",
-    title: "Visual & Digital Designer",
-    description:
-      "Campañas creativas para redes sociales y medios digitales con enfoque en resultados medibles.",
-    side: "left",
-    explanation:
-      "Creatividad y diseño para marketing digital con impacto real.",
-  },
-];
+gsap.registerPlugin(ScrollTrigger);
 
 const TimeLine = () => {
   const timelineRef = useRef(null);
