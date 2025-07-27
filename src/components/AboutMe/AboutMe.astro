@@ -4,23 +4,28 @@ import CustomButton from "../ui/CustomButton/CustomButton";
 import SpecialitiesWrapper from "../common/SpecialitiesWrapper.astro";
 ---
 
-<section id="about-me" class="flex flex-col justify-center py-6 px-12 md:h-screen ">
+<section
+  id="about-me"
+  class="flex flex-col justify-center py-6 px-12 md:h-screen"
+>
   <h2 class="text-6xl font-bold mb-12 text-center">Sobre mí</h2>
 
   <div class="grid grid-cols-1 md:grid-cols-2 gap-x-20 items-start">
     <div class="flex flex-col md:items-end">
-      <div class="flex items-center justify-center overflow-hidden">
+      <div
+        class="relative flex items-center justify-center overflow-hidden pb-2"
+      >
         <img
-          src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=facearea&w=400&h=400&facepad=2"
+          src="/media/about-me/desktop/myself.webp"
           alt="imagen de Adrián"
-          class="object-cover"
+          class="object-cover w-full h-auto mask-gradient"
         />
       </div>
 
       <div class="mt-4 flex flex-col md:items-end">
         <div class="flex items-center gap-x-1">
           <MapPin size={16} />
-          <p class="">Valencia, España</p>
+          <p>Valencia, España</p>
         </div>
         <div class="flex items-center gap-x-1">
           <Mail size={16} />
@@ -35,19 +40,20 @@ import SpecialitiesWrapper from "../common/SpecialitiesWrapper.astro";
       <article class="space-y-4">
         <h3 class="text-3xl font-bold mb-2">Desarrollador y Diseñador Web</h3>
         <p class="text-font-gray">
-          ¡Hola! Soy un apasionado desarrollador y diseñador web con un enfoque
-          en la creatividad y la experiencia del usuario.
+          ¡Hola! Mi nombre es Adrián, soy un apasionado del desarrollo y diseño
+          web con un enfoque especial en la creación de experiencias digitales.
         </p>
         <p class="text-font-gray">
-          Con más de 5 años de experiencia en la industria, he trabajado en
-          proyectos que van desde pequeñas startups hasta grandes empresas,
-          siempre buscando crear soluciones digitales que no solo sean
-          funcionales, sino también visualmente atractivas y fáciles de usar.
+          Con más de 2 años de experiencia como desarrollador web, he trabajado
+          en multitud de proyectos totalmente diferentes, como apliaciones web,
+          landing pages, e-commerce, blogs, etc. Mi punto fuerte es la
+          versatilidad y constancia, lo que me permite adaptarme a diferentes
+          entornos y proyectos.
         </p>
         <p class="text-font-gray">
           Creo firmemente que el buen diseño no solo debe verse bien, sino
-          también comunicar de manera efectiva y generar una conexión emocional
-          auténtica.
+          también comunicar de manera efectiva y generar una conexión con el
+          usuario final.
         </p>
       </article>
 
@@ -60,8 +66,8 @@ import SpecialitiesWrapper from "../common/SpecialitiesWrapper.astro";
         <blockquote
           class="border-l-4 border-theme-gray pl-4 italic text-font-gray"
         >
-          "La simplicidad es la máxima sofisticación. Cada elemento debe tener
-          un propósito, cada decisión debe estar justificada."
+          "Diseñar y desarrollar no es solo crear, es entender al usuario y
+          construir algo que realmente funcione y emocione."
         </blockquote>
       </article>
 
