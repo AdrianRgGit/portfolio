@@ -1,11 +1,12 @@
 export default function CustomInputText({
-  id = null,
+  id = "",
   label = "Nombre",
   type = "text",
-  name = null,
-  placeholder = "Tu nombre",
-  value = null,
-  className = null,
+  name = "",
+  placeholder = "",
+  value = "",
+  onChange = () => {},
+  className = "",
 }) {
   return (
     <label className={className}>
@@ -16,7 +17,9 @@ export default function CustomInputText({
         id={id}
         placeholder={placeholder}
         value={value}
+        onChange={onChange}
         className="border-theme-gray w-full rounded-md border p-2"
+        required={["email", "text"].includes(type)}
       />
     </label>
   );
