@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Calendar } from "lucide-react";
+import { Calendar, Clock, User } from "lucide-react";
 
 import MyProjectsBentoCard from "./MyProjectsBentoCard";
 import projects from "../../data/projects";
@@ -59,11 +59,18 @@ const MyProjectsBento = () => {
 
         <div className="mt-6 grid grid-cols-1 gap-x-6 md:grid-cols-2">
           <div>
-            <p className="font-medium">Cliente</p>
+            <div className="flex items-center gap-x-1 text-font-gray">
+              <User size={16} />
+              <p className="font-medium">Cliente</p>
+            </div>
             <p>{selectedProject?.customer}</p>
           </div>
+
           <div>
-            <p className="font-medium">Duración</p>
+            <div className="flex items-center gap-x-1 text-font-gray">
+              <Clock size={16} />
+              <p className="font-medium">Duración</p>
+            </div>
             <p>
               {selectedProject?.startedAt} - {selectedProject?.endedAt}
             </p>

@@ -34,7 +34,7 @@ export default [
       "Desarrollo de una aplicación web para gestión de tareas.",
     description:
       "Este proyecto consistió en crear una aplicación web moderna usando React y Node.js para gestionar tareas y equipos de trabajo. Se implementaron funcionalidades de autenticación y notificaciones.",
-    mainTag: "react",
+    mainTag: "web",
     tags: ["react", "nodejs", "mongodb"],
     url: "https://techsolutions.com/app",
     repository: "https://github.com/techsolutions/app",
