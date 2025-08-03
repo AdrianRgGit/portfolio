@@ -4,7 +4,7 @@ export default [
     company: "NightStream",
     title: "Desarrollador Fullstack",
     description:
-      "Startup dedicada al sector del streaming y la creación de contenido digital. Se desarrolló una aplicación sass a medida para la conexión entre streamers y marcas.",
+      "Startup dedicada al sector del streaming y la creación de contenido digital. Se desarrolló una aplicación saas a medida para la conexión entre streamers y marcas.",
     side: "left",
     explanation:
       "Fué proyecto único desarrollado con NextJS y Go. La aplicación se encargaba de la conexión entre marcas y streamers mediante formularios extensos optimizados, seguros y amenos para el usuario.",

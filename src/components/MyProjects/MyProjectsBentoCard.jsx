@@ -28,7 +28,9 @@ const MyProjectsBentoCard = ({
         }`}
       >
         <span className="p-4">
-          <CustomBadge>{project.mainTag}</CustomBadge>
+          <CustomBadge className="bg-theme-white">
+            {project.mainTag}
+          </CustomBadge>
         </span>
 
         <div className="overflow-hidden rounded-b-xl p-4 backdrop-blur-sm">
