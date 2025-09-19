@@ -5,7 +5,7 @@ export default [
     updatedAt: "",
     endedAt: "2025-07-16",
     banner: "/media/my-projects/desktop/banner-logo.webp",
-    bannerGif: "/media/my-projects/desktop/banner-logo.gif",
+    hoverPreview: "/media/my-projects/desktop/banner-logo.gif",
     bannerAlt: "Banner de la landing de logo",
     customer: "Grupo Neural",
     title: "Logo",
@@ -25,7 +25,7 @@ export default [
     updatedAt: "2023-02-15",
     endedAt: "2023-03-01",
     banner: "/media/my-projects/desktop/banner-intensive.webp",
-    bannerGif:
+    hoverPreview:
       "https://images.unsplash.com/photo-1465101178521-c1a4c8a0f8f5?auto=format&fit=facearea&w=400&h=400&facepad=2",
     bannerAlt: "Banner del proyecto 2",
     customer: "Tech Solutions",
@@ -48,7 +48,7 @@ export default [
     endedAt: "2022-12-20",
     banner:
       "https://images.unsplash.com/photo-1508780709619-79562169bc64?auto=format&fit=facearea&w=400&h=400&facepad=2",
-    bannerGif:
+    hoverPreview:
       "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=facearea&w=400&h=400&facepad=2",
     bannerAlt: "Banner del proyecto 3",
     customer: "InnovateX",
@@ -70,7 +70,7 @@ export default [
     endedAt: "2023-05-01",
     banner:
       "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=facearea&w=400&h=400&facepad=2",
-    bannerGif:
+    hoverPreview:
       "https://images.unsplash.com/photo-1465101058546-8cfb7c6b7c2c?auto=format&fit=facearea&w=400&h=400&facepad=2",
     bannerAlt: "Banner del proyecto 4",
     customer: "SmartHome Inc.",
@@ -92,7 +92,7 @@ export default [
     endedAt: "2025-07-16",
     banner:
       "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=facearea&w=400&h=400&facepad=2",
-    bannerGif:
+    hoverPreview:
       "https://images.unsplash.com/photo-1465101060307-3c2b7c6b7c2c?auto=format&fit=facearea&w=400&h=400&facepad=2",
     bannerAlt: "Banner del proyecto 5",
     customer: "EduTech",

@@ -8,13 +8,12 @@ const MyProjectsBentoCard = ({
   onSelect,
 }) => {
   const [isHovered, setIsHovered] = useState(false);
-  const backgroundImage = isHovered ? project.bannerGif : project.banner;
 
   return (
     <article
-      className={`relative col-span-${colSpan} ${highlighted ? "border-theme-green" : "border-theme-light-gray"} cursor-pointer rounded-xl border-4 transition-all duration-300`}
+      className={`relative col-span-${colSpan} ${highlighted ? "border-theme-green" : "border-theme-light-gray"} cursor-pointer overflow-hidden rounded-xl border-4 transition-all duration-300`}
       style={{
-        backgroundImage: `url(${backgroundImage})`,
+        backgroundImage: `url(${project.banner})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
@@ -22,6 +21,17 @@ const MyProjectsBentoCard = ({
       onMouseLeave={() => setIsHovered(false)}
       onClick={onSelect}
     >
+      {/* Imagen pequeña central que aparece en hover */}
+      {isHovered && (
+        <div className="absolute inset-0 flex items-center justify-center transition-all duration-300">
+          <img
+            src={project.hoverPreview}
+            alt={`${project.title} preview`}
+            className="w-1/2 rounded-xl object-cover"
+          />
+        </div>
+      )}
+
       <div
         className={`flex h-full flex-col justify-between transition-opacity duration-300 ${
           isHovered ? "invisible opacity-0" : "visible opacity-100"
