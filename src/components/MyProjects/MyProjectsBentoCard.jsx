@@ -23,11 +23,14 @@ const MyProjectsBentoCard = ({
     >
       {/* Imagen pequeña central que aparece en hover */}
       {isHovered && (
-        <div className="absolute inset-0 flex items-center justify-center transition-all duration-300">
+        <div className="absolute inset-0 flex items-center justify-center">
           <img
             src={project.hoverPreview}
             alt={`${project.title} preview`}
-            className="w-1/2 rounded-xl object-cover"
+            className="animate-bounce-in w-1/2 rounded-xl object-cover"
+            style={{
+              animation: "bounceIn 0.3s ease-out",
+            }}
           />
         </div>
       )}
@@ -52,6 +55,20 @@ const MyProjectsBentoCard = ({
       {highlighted && (
         <div className="bg-theme-green absolute top-2 right-2 h-2 w-2 rounded-full" />
       )}
+
+      <style jsx>{`
+        @keyframes bounceIn {
+          0% {
+            transform: scale(1.1);
+          }
+          70% {
+            transform: scale(0.98);
+          }
+          100% {
+            transform: scale(1);
+          }
+        }
+      `}</style>
     </article>
   );
 };
